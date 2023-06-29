@@ -59,7 +59,7 @@ function nextquestion(){
                 syutudaizumi.push(num);
             }
         }
-        if(x==MAX-1){
+        if(x==MAX){
             nextbutton.value="結果発表"
         }
         question=document.getElementById("question");
