@@ -1,5 +1,5 @@
-var c=0,i=0;
-var n=10,x=1;
+var cor=0,inc=0;
+var MAX=10,x=1;
 var AllQandA,num;
 var syutudaizumi=[];
 
@@ -9,30 +9,62 @@ function inanswer(){
         answer.disabled=true;
         answerbutton.disabled=true;
         nextbutton.disabled=false;
-        c+=1;
+        nextbutton.style.display='inline';
+        cor+=1;
         CorI.innerHTML="正解："+AllQandA[num].answer;
     }
     else{
         answer.disabled=true;
         answerbutton.disabled=true;
         nextbutton.disabled=false;
-        i+=1;
-        CorI.innerHTML="不正解；正答："+AllQandA[num].answer;
+        nextbutton.style.display='inline';
+        inc+=1;
+        CorI.innerHTML="不正解 正しい答え："+AllQandA[num].answer;
     }
 }
 
 function nextquestion(){
-    x+=1;
+    a=0;
     let ps=document.getElementById("problemstatement");
-    ps.innerHTML="問題"+x+"：次の漢字の読みをひらがなで答えよ"
-    answer.disabled=false;
-    answer.value="";
-    answerbutton.disabled=false;
-    CorI.innerHTML=null;
-    var value=Object.keys(AllQandA);
-    num = Math.floor(Math.random()*value.length);
-    question=document.getElementById("question");
-    question.innerText=AllQandA[num].question;
+    if(x>=MAX){
+        let pq=document.getElementById("pquestion");
+        let pa=document.getElementById("panswer");
+        let pnb=document.getElementById("pnbutton");
+        ps.innerHTML="<b>結果発表</b>";
+        pq.innerHTML="正解数："+cor;
+        pa.innerHTML="<a href='random10.html'>もう一度挑戦する</a>";
+        CorI.innerHTML=null;
+        pnb.innerHTML="<a href='index.html'>タイトルに戻る</a>";
+        document.getElementById("tweet").style.display='block'
+        document.getElementById("twittersharebutton").onclick = function() {
+            let text = document.getElementById("pquestion").innerText;
+            let url = encodeURIComponent(location.href);
+            window.open("https://twitter.com/share?text=" + text + "&url=" + url);
+        }
+    }
+    else{
+        x+=1;
+        ps.innerHTML="問題"+x+"：次の漢字の読みをひらがなで答えよ"
+        answer.disabled=false;
+        answer.value="";
+        answerbutton.disabled=false;
+        nextbutton.disabled=true;
+        nextbutton.style.display='none';
+        CorI.innerHTML="<br>";
+        var value=Object.keys(AllQandA);
+        while(a==0){
+            num = Math.floor(Math.random()*value.length);
+            if(syutudaizumi.every(element => element != num)){
+                a+=1;
+                syutudaizumi.push(num);
+            }
+        }
+        if(x==MAX-1){
+            nextbutton.value="結果発表"
+        }
+        question=document.getElementById("question");
+        question.innerText=AllQandA[num].question;
+    }
 }
 
 
@@ -45,6 +77,7 @@ window.onload=function(){
             AllQandA=JSON.parse(obj.response);
             var value=Object.keys(AllQandA);
             num = Math.floor(Math.random()*value.length);
+            syutudaizumi.push(num);
             question=document.getElementById("question");
             question.innerText=AllQandA[num].question;
             let ps=document.getElementById("problemstatement");
@@ -53,6 +86,8 @@ window.onload=function(){
             let answerbutton=document.getElementById("answerbutton");
             let nextbutton=document.getElementById("nextbutton");
             nextbutton.disabled=true;
+            nextbutton.style.display='none';
+            document.getElementById("tweet").style.display='none'
             answerbutton.onclick=inanswer;
             nextbutton.onclick=nextquestion;
         }

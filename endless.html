@@ -2,8 +2,10 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <title>魚の難読漢字クイズ</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="endless.js"></script>
 </head>
 <body>
@@ -11,8 +13,13 @@
         <a href="index.html">タイトルに戻る</a>
     </div>
     <div class="main">
-        <h1>魚の難読漢字クイズ：チャレンジ</h1>
-        
+        <h1>魚の難読漢字クイズ：どこまでいけるかチャレンジ</h1>
+        <p id="problemstatement">問題1：次の漢字の読みをひらがなで答えよ</p>
+        <p id="pquestion"><span id="question"></span></p>
+        <p id="panswer">答え：<input type="text" id="answer"> <input type="button" value="解答" id="answerbutton"></p>
+        <p id="CorI"><br></p>
+        <p id="pnbutton"><input type='button' value='次の問題' id='nextbutton'></p>
+        <p id="tweet"><button id="twittersharebutton"><i class="fab fa-twitter"></i>ツイートする</button><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
     </div>
     <div class="footer">
         <span>作った人</span>
