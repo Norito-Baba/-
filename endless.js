@@ -58,7 +58,7 @@ function nextquestion(){
     }
     else{
         x+=1;
-        ps.innerHTML="問題"+x+"：次の漢字の読みをひらがなで答えよ"
+        ps.innerHTML="問題"+x+":次の漢字の読みをひらがなで答えよ"
         answer.disabled=false;
         answer.value="";
         answerbutton.disabled=false;
