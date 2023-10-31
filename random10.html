@@ -1,32 +1,51 @@
 <!doctype html>
 <html lang="ja">
 <head>
+    <!-- 文字コード指定 -->
     <meta charset="UTF-8">
+    <!-- サイズ設定 -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Twitterアイコンの読み込み -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- タイトル -->
     <title>魚の難読漢字クイズ</title>
+    <!-- スタイルシート -->
     <link rel="stylesheet" href="style.css">
+    <!-- jQueryの読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- 処理を行うJS指定 -->
     <script type="text/javascript" src="random10.js"></script>
 </head>
 <body>
     <div class="wrapper">
-    <div class="header">
-        <a href="index.html">タイトルに戻る</a>
-    </div>
-    <div class="main">
-        <h1>魚の難読漢字クイズ<br>ランダム10問</h1>
-        <p id="problemstatement">問題1:次の漢字の読みをひらがなで答えよ</p>
-        <p id="pquestion"><span id="question"></span></p>
-        <p id="panswer">答え：<input type="text" id="answer"> <input type="button" value="解答" id="answerbutton"></p>
-        <p id="CorI"><br></p>
-        <p id="pnbutton"><input type='button' value='次の問題' id='nextbutton'></p>
-        <p id="tweet"><button id="twittersharebutton"><i class="fab fa-twitter"></i>ツイートする</button><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-    </div>
-    <div class="footer">
-        <span>作った人</span>
-        <a href="https://github.com/Norito-Baba" target="_blank">Norito-Baba</a>
-    </div>
+        <!-- ヘッダ部分 -->
+        <div class="header">
+            <!-- トップページへのリンク -->
+            <a href="index.html">タイトルに戻る</a>
+        </div>
+        <!-- コンテンツ部分 -->
+        <div class="main">
+            <!-- タイトル -->
+            <h1>魚の難読漢字クイズ<br>ランダム10問</h1>
+            <!-- 問題文 -->
+            <p id="problemstatement">問題1:次の漢字の読みをひらがなで答えよ</p>
+            <!-- 問題の漢字 -->
+            <p id="pquestion"><span id="question"></span></p>
+            <!-- 回答欄 -->
+            <p id="panswer">答え：<input type="text" id="answer"> <input type="button" value="解答" id="answerbutton"></p>
+            <!-- 正誤表示 -->
+            <p id="CorI"><br></p>
+            <!-- 次の問題表示ボタン -->
+            <p id="pnbutton"><input type='button' value='次の問題' id='nextbutton'></p>
+            <!-- ツイートボタン -->
+            <p id="tweet"><button id="twittersharebutton"><i class="fab fa-twitter"></i>ツイートする</button><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+        </div>
+        <!-- フッタ部分 -->
+        <div class="footer">
+            <!-- 制作者表記 -->
+            <span>作った人</span>
+            <a href="https://github.com/Norito-Baba" target="_blank">Norito-Baba</a>
+        </div>
     </div>
 </body>
 </html>

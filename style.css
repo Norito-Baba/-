@@ -1,18 +1,22 @@
+/* 全ての表示について */
 * {
     margin: 0;
     padding: 0;
 }
 
+/* デフォルトのサイズ */
 html {
     font-size: 75%;
     height: 100%;
 }
+/* 画面がある程度大きい場合 */
 @media screen and (min-width: 768px) {
     html {
         font-size: 87.5%;
         height: 100%;
     }
 }
+/* 画面がさらに大きい場合 */
 @media screen and (min-width: 1024px) {
     html {
         font-size: 100%;
@@ -20,6 +24,7 @@ html {
     }
 }
 
+/* body部分 */
 body {
     margin: 0;
     padding: 0;
@@ -27,6 +32,7 @@ body {
     min-height: 100%;
 }
 
+/* wrapper部分 */
 .wrapper{
     min-height: 100vh;
     position: relative;
@@ -34,6 +40,7 @@ body {
     box-sizing: border-box;
 }
 
+/* header部分 */
 .header {
     position: fixed;
     top: 0;
@@ -43,12 +50,14 @@ body {
     background-color: rgb(0, 157, 255);
 }
 
+/* main部分 */
 .main {
     padding-left: 2vw;
     padding-top: 10vw;
     overflow: auto;
     font-size: 4vw;
 }
+/* ボタン */
 button {
     padding-top: 1vw;
     padding-bottom: 1vw;
@@ -56,22 +65,26 @@ button {
     padding-right: 1vw;
     font-size: 4vw;
 }
+/* input全体 */
 input {
     padding-left: 1vw;
     padding-right: 1vw;
     font-size: 4vw;
 }
+/* text */
 text {
     padding-left: 1vw;
     padding-right: 1vw;
     font-size: 4vw;
 }
+/* mainのspan部分 */
 .main span{
     padding-left: 4vw;
     font-size:12vw;
     font-weight: bold;
 }
 
+/* フッタ */
 .footer {
     position: fixed;
     bottom: 0;
@@ -81,6 +94,7 @@ text {
     background-color: darkgrey;
 }
 
+/* 画像 */
 img {
 	max-width: 100%;
 	height: auto;
